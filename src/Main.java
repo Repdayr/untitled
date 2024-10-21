@@ -6,22 +6,25 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        /*char ch = sc.next().charAt(0);
-        if
-        System.out.println((char)((int)ch - 32));*/
+        /*int chint = (int) sc.next().charAt(0);
+        if (chint > 96){
+            System.out.println((char)(chint - 32));
+        } else {
+            System.out.println((char)(chint + 32));
+        }*/
 
 
         int a = sc.nextInt();
-        String[][] m = new String[a][a];
+        int[][] m = new int[a][a];
         String s = sc.nextLine();
         for (int i = 0; i < a; i++) {
             s = sc.nextLine();
             String[] s1 = s.split(" ");
             for (int j = 0; j < a; j++) {
-                m[i][j] = s1[j];
+                m[i][j] = Integer.parseInt(s1[j]);
             }
         }
-        String[][] ma = transposeMatrix(m, a, a);
+        int [][] ma = transposeMatrix(m, a, a);
         boolean f = true;
         for (int i = 0; i < a; i++) {
             for (int j = 0; j < a; j++) {
@@ -72,15 +75,17 @@ public class Main {
 
         System.out.println(Arrays.toString(minToBegin(l)));*/
     }
-    public static String[][] transposeMatrix(String[][] matrix, int width, int height){
+    public static int [][] transposeMatrix(int [][] matrix, int width, int height){
+        int[][] ma = matrix.clone();
         for (int i = 0; i < width; i++) {
             for (int j = i + 1; j < height; j++) {
-                String tmp = matrix[i][j];
-                matrix[i][j] = matrix[j][i];
-                matrix[j][i] = tmp;
+                int tmp = ma[i][j];
+                ma[i][j] = ma[j][i];
+                ma[j][i] = tmp;
             }
         }
-        return matrix;
+
+        return ma;
     }
     public static void printStringMatrix(String [][] matrix) {
         for (String[] ints : matrix) {
