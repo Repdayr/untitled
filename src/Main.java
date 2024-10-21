@@ -6,27 +6,12 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        /*char ch = sc.next().charAt(0);
+        if
+        System.out.println((char)((int)ch - 32));*/
+
+
         int a = sc.nextInt();
-        int b = sc.nextInt();
-        int c = 0;
-        int[][] m = new int[a][b];
-        for (int i = 0; i < a; i++) {
-            for (int j = 0; j < b; j++) {
-                if (i % 2 == 0){
-                    m[i][j] = c;
-                    c++;
-                }
-                if (i % 2 == 1){
-                    m[i][b - j] = c;
-                    c++;
-                }
-            }
-        }
-        printIntMatrix(m);
-
-
-
-        /*int a = sc.nextInt();
         String[][] m = new String[a][a];
         String s = sc.nextLine();
         for (int i = 0; i < a; i++) {
@@ -51,7 +36,7 @@ public class Main {
         }
         else {
             System.out.println("no");
-        }*/
+        }
 
 
         /*int a = sc.nextInt();
@@ -109,7 +94,7 @@ public class Main {
     public static void printIntMatrix(int [][] matrix) {
         for (int[] ints : matrix) {
             for (int anInt : ints) {
-                System.out.print(anInt + " ");
+                System.out.printf("%3d", anInt);
             }
             System.out.println();
         }
