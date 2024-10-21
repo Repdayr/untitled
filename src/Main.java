@@ -6,7 +6,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        /*int chint = (int) sc.next().charAt(0);
+        /*int chint = (int) sc.next().charAt(0)
         if (chint > 96){
             System.out.println((char)(chint - 32));
         } else {
